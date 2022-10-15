@@ -3,11 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-theme;
-  }
-}
 
 * {
   margin: 0;

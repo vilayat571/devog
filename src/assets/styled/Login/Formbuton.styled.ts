@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Formbuton = styled.button`
   width: 50%;
   color: #fff;
-  height: 56px;
+  height: 50px;
   border: none;
   outline: none;
   border-radius: 2px;

@@ -40,8 +40,22 @@ const getTokenReducer = createSlice({
       state.error = null;
     }),
       builder.addCase(fetchDetails.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.loading = false;
+        if (action.payload.access) {
+          localStorage.setItem("token", action.payload.access);
+          localStorage.setItem(
+            "details",
+            JSON.stringify(action.payload.user_details)
+          );
+          console.log(
+            "Acess and details",
+            localStorage.getItem("token"),
+            localStorage.getItem("details")
+          );
+        }
+
+        console.log(action.payload);
+        state.data = action.payload;
         state.error = null;
       }),
       builder.addCase(fetchDetails.rejected, (state, action) => {

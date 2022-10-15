@@ -20,6 +20,7 @@ module.exports = {
       content: "#fff",
       theme: "#1f2028",
       out: "#4b4c53",
+      blackContent:'#535661'
     },
   },
   variants: {

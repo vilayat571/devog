@@ -9,6 +9,7 @@ import { fetchDetails } from "../../redux/reducers/getTokenReducer";
 import { useAppDispatch } from "../../redux/store/store";
 //@ts-ignore
 import loginImg from "../../../public/loginimg.webp";
+import { useNavigate } from "react-router-dom";
 
 interface ILogin {
   handleSubmit(e: React.FormEvent<HTMLFormElement>): any;
@@ -20,6 +21,8 @@ interface ILogin {
 }
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState<ILogin["form"]>({
     email: "",
     password: "",
@@ -29,11 +32,16 @@ export default function Login() {
 
   const handleSubmit: ILogin["handleSubmit"] = (e) => {
     e.preventDefault();
-    dispatch(fetchDetails({ email: form.email, password: form.password }));
+    if (form.email && form.password) {
+      dispatch(fetchDetails({ email: form.email, password: form.password }));
+    } else {
+      alert("Any field can not be blank");
+    }
     setForm({
       email: "",
       password: "",
     });
+    navigate("/");
   };
 
   const handleChange: ILogin["handleChange"] = (e) => {

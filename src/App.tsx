@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/404";
 import About from "./pages/About/About";
+import Logout from "./pages/Account/Logut";
 import Blog from "./pages/Blog";
 import SingleBlog from "./pages/Blog/[id]";
 import Contact from "./pages/Contact/Contact";
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/save" element={<Save />} />
           <Route path="/blogs" element={<Blog />} />
+          <Route path="/account/logout" element={<Logout />} />
           <Route path="/blogs/:id" element={<SingleBlog />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
