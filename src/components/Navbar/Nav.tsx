@@ -32,28 +32,34 @@ export const Nav = () => {
 
   const token: INav["token"] = localStorage.getItem("token");
 
-  const details: Partial<INav["details"]> = JSON.parse(localStorage.getItem("details"));
+  const details: Partial<INav["details"]> = JSON.parse(
+    //@ts-ignore
+    localStorage.getItem("details")
+  );
 
   return (
     <div
-      className={`w-full border-b-2 border-[#272935]
-    h-32 sm:px-6 md:px-6 xl:px-20 lg:px-20 py-5 ${
-      !theme ? "text-content" : "text-black"
-    }  flex justify-between items-center `}
+      className={`w-full h-32 sm:px-6 md:px-6 xl:px-20 lg:px-20 pt-12 py-5
+       ${!theme ? "text-content" : "text-black"}
+         flex justify-between items-center `}
     >
       <div className=" group w-1/12">
         <Link
-          className="text-[1.5rem] tracking-[1px] w-0 group-hover:w-auto 
-          border-b-2 py-1 border-theme transform duration-75 ease-in
-        group-hover:border-content 
-          font-bold"
+          className={`text-[1.5rem] tracking-[1px] w-0 group-hover:w-auto 
+          border-b-2 py-1 transition-all transform duration-200 ease-in
+        ${
+          !theme
+            ? "group-hover:border-content border-theme"
+            : "group-hover:border-theme border-content"
+        }
+          font-bold`}
           to={"/"}
         >
-          Devog
+          S.Vilayat
         </Link>
       </div>
       <div
-        className={`sm:hidden md:hidden lg:flex xl:flex flex w-1/3 tracking-[0.8px] 
+        className={`sm:hidden md:hidden lg:flex xl:flex flex w-1/2 tracking-[0.8px] 
         justify-between items-center ${
           !theme ? "text-nav" : "text-blackContent"
         } font-bold`}
@@ -61,14 +67,14 @@ export const Nav = () => {
         <Link className="px-2 hover:text-content" to={"/blogs"}>
           Blog
         </Link>
-        <Link className="px-2 hover:text-content" to={"/about"}>
-          About
-        </Link>
-        <Link className="px-2 hover:text-content" to={"/contact"}>
-          Contact
+        <Link className="px-2 hover:text-content" to={"/save"}>
+          Wishlist
         </Link>
         <Link className="px-2 hover:text-content" to={"/save"}>
-          Save
+          Workshops
+        </Link>
+        <Link className="px-2 hover:text-content" to={"/about"}>
+          About
         </Link>
         {token ? (
           <Link className="px-2 hover:text-content" to={"/account/logout"}>
@@ -92,21 +98,19 @@ export const Nav = () => {
         >
           <Menu />
         </div>
-        <div className=" ml-2 cursor-pointer text-3xl border-2 border-out hover:border-content p-1 w-14 h-14  flex justify-center items-center rounded-full">
-          <button
-            className="flex justify-center items-center"
-            onClick={() => handleChange()}
-          >
-            {theme ? (
-              <DarkModeOutlined className=" rotate-12" />
-            ) : (
-              <LightModeOutlined />
-            )}
-          </button>
-        </div>
+        <button
+          className="flex justify-center items-center ml-2 cursor-pointer
+           text-3xl border-2 border-out hover:border-content p-1 w-14 h-14 rounded-full
+           transition-all transform duration-100 ease-in"
+          onClick={() => handleChange()}
+        >
+          {!theme ? (
+            <DarkModeOutlined className="rotate-12 " />
+          ) : (
+            <LightModeOutlined />
+          )}
+        </button>
       </div>
     </div>
   );
 };
-
-/* Transition have to do */

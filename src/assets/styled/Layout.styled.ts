@@ -6,7 +6,7 @@ interface IProps {
 
 export const LayoutStyled = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   background-color: ${(props: IProps) => props.theme};

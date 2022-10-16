@@ -13,7 +13,11 @@ export default function Layout({ children }: ILayout) {
   );
 
   return (
-    <LayoutStyled theme={theme ? "#ffffff" : "#1f2028"}>
+    <LayoutStyled
+      className={`transition-all transform duration-300  ease-linear
+       ${theme ? 'text-[#000]' : 'text-content'}`}
+      theme={theme ? "#ffffff" : "#1f2028"}
+    >
       <Nav />
       {children}
     </LayoutStyled>

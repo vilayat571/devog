@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Formbuton } from "../../assets/styled/Login/Formbuton.styled";
 import { FormInput } from "../../assets/styled/Login/Forminput.styled";
 import { Formlogin } from "../../assets/styled/Login/Formlogin.styled";
+import { Formlayout } from "../../assets/styled/Register/Formlayout.styled";
+import { FormRegister } from "../../assets/styled/Register/Formregister.styled";
 import Layout from "../../layout/Layout";
 import { registeredUser } from "../../redux/reducers/registerReducer";
 import { useAppDispatch } from "../../redux/store/store";
@@ -55,11 +57,8 @@ export default function Register() {
 
   return (
     <Layout>
-      <div
-        className="lg:h-screen bg-theme xl:h-screen md:h-auto sm:py-10 md:py-10 
-       sm:h-auto w-full flex justify-center items-center"
-      >
-        <Formlogin onSubmit={(e) => handleSubmit(e)}>
+      <Formlayout>
+        <FormRegister onSubmit={(e) => handleSubmit(e)}>
           <FormInput
             required={true}
             placeholder="First name"
@@ -105,8 +104,8 @@ export default function Register() {
             type="text"
           />
           <Formbuton>Register</Formbuton>
-        </Formlogin>
-      </div>
+        </FormRegister>
+      </Formlayout>
     </Layout>
   );
 }

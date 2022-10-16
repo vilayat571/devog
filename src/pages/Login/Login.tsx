@@ -8,7 +8,7 @@ import Layout from "../../layout/Layout";
 import { fetchDetails } from "../../redux/reducers/getTokenReducer";
 import { useAppDispatch } from "../../redux/store/store";
 //@ts-ignore
-import loginImg from "../../../public/loginimg.webp";
+import loginImg from "../../assets/images/loginimg.webp";
 import { useNavigate } from "react-router-dom";
 
 interface ILogin {
@@ -34,6 +34,7 @@ export default function Login() {
     e.preventDefault();
     if (form.email && form.password) {
       dispatch(fetchDetails({ email: form.email, password: form.password }));
+      navigate("/save");
     } else {
       alert("Any field can not be blank");
     }
@@ -41,7 +42,6 @@ export default function Login() {
       email: "",
       password: "",
     });
-    navigate("/");
   };
 
   const handleChange: ILogin["handleChange"] = (e) => {
