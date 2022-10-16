@@ -43,6 +43,7 @@ export const Nav = () => {
        ${!theme ? "text-content" : "text-black"}
          flex justify-between items-center `}
     >
+      
       <div className=" group w-1/12">
         <Link
           className={`text-[1.5rem] tracking-[1px] w-0 group-hover:w-auto 
@@ -58,6 +59,8 @@ export const Nav = () => {
           S.Vilayat
         </Link>
       </div>
+
+
       <div
         className={`sm:hidden md:hidden lg:flex xl:flex flex w-1/2 tracking-[0.8px] 
         justify-between items-center ${
@@ -99,9 +102,13 @@ export const Nav = () => {
           <Menu />
         </div>
         <button
-          className="flex justify-center items-center ml-2 cursor-pointer
-           text-3xl border-2 border-out hover:border-content p-1 w-14 h-14 rounded-full
-           transition-all transform duration-100 ease-in"
+          className={`flex justify-center items-center ml-2 cursor-pointer
+          text-3xl border-2 ${
+            !theme
+              ? " border-out hover:border-content"
+              : " border-[#9b9b9b] hover:border-[#000]"
+          } p-1 w-14 h-14 rounded-full
+          transition-all transform duration-100 ease-in`}
           onClick={() => handleChange()}
         >
           {!theme ? (
