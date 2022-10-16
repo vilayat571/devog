@@ -1,5 +1,4 @@
 import { DarkModeOutlined, LightModeOutlined, Menu } from "@mui/icons-material";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { changeTheme } from "../../redux/reducers/changeThemeReducer";
 import {
@@ -43,7 +42,7 @@ export const Nav = () => {
        ${!theme ? "text-content" : "text-black"}
          flex justify-between items-center `}
     >
-      
+
       <div className=" group w-1/12">
         <Link
           className={`text-[1.5rem] tracking-[1px] w-0 group-hover:w-auto 

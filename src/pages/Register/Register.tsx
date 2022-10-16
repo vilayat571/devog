@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Formbuton } from "../../assets/styled/Login/Formbuton.styled";
 import { FormInput } from "../../assets/styled/Login/Forminput.styled";
-import { Formlogin } from "../../assets/styled/Login/Formlogin.styled";
 import { Formlayout } from "../../assets/styled/Register/Formlayout.styled";
 import { FormRegister } from "../../assets/styled/Register/Formregister.styled";
 import Layout from "../../layout/Layout";
