@@ -155,7 +155,7 @@ export const Nav = () => {
                   </Link>
                   <Link
                     className="py-8 col-span-2
-                  px-6  border  border-[#424453] hover:text-content"
+                  px-6  border-b border-t  border-[#424453] hover:text-content"
                     to={"/register"}
                   >
                     Register
