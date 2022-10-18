@@ -8,7 +8,7 @@ import { registeredUser } from "../../redux/reducers/registerReducer";
 import { useAppDispatch } from "../../redux/store/store";
 
 interface Register {
-  handleSubmit(e:  React.FormEvent<HTMLFormElement>): void;
+  handleSubmit(e: React.FormEvent<HTMLFormElement>): void;
   handleChange(e: React.ChangeEvent<HTMLInputElement>): void;
   regForm: {
     first_name: string;
@@ -31,7 +31,7 @@ export default function Register() {
   const dispatch = useAppDispatch();
 
   const handleSubmit: Register["handleSubmit"] = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch(
       registeredUser({
         first_name: regForm.first_name,
@@ -59,7 +59,7 @@ export default function Register() {
       <Formlayout>
         <FormRegister onSubmit={(e) => handleSubmit(e)}>
           <FormInput
-            required={true}
+            required={false}
             placeholder="First name"
             id="first_name"
             onChange={(e) => handleChange(e)}
@@ -68,7 +68,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={true}
+            required={false}
             placeholder="Last name"
             id="last_name"
             onChange={(e) => handleChange(e)}
@@ -77,7 +77,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={true}
+            required={false}
             placeholder="Email"
             id="email"
             onChange={(e) => handleChange(e)}
@@ -86,7 +86,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={true}
+            required={false}
             placeholder="Username"
             id="username"
             onChange={(e) => handleChange(e)}
@@ -95,7 +95,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={true}
+            required={false}
             placeholder="Password"
             id="password"
             onChange={(e) => handleChange(e)}
