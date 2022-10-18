@@ -4,7 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Link } from "react-router-dom";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
-
+/* import ScrollToTop from "react-scroll-to-top"; */
 export function Fotter() {
   const theme: boolean = useAppSelector(
     (state: RootState) => state.changeThemeReducer.theme

@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { LayoutStyled } from "../assets/styled/Layout/Layout.styled";
 import { Nav } from "../components/Navbar/Nav";
 import { RootState, useAppSelector } from "../redux/store/store";
-import ScrollToTop from "react-scroll-to-top";
 import { Fotter } from "../components/Fotter/Fotter";
 interface ILayout {
   children: ReactNode;
@@ -21,7 +20,6 @@ export default function Layout({ children }: ILayout) {
       <Nav />
       {children}
       <hr className="w-full border-[#424453] my-12" />
-   
       <Fotter />
     </LayoutStyled>
   );
