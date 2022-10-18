@@ -1,6 +1,7 @@
-
 import { Link } from "react-router-dom";
 import { MainStyledlayout1 } from "../../assets/styled/Main/Mainlayout1.styled";
+import { RightDiv } from "../../assets/styled/Main/RightDiv.styled";
+import { RightDivP } from "../../assets/styled/Main/RightDivP.styled";
 import { RootState, useAppSelector } from "../../redux/store/store";
 
 export default function Mainlayout1() {
@@ -9,28 +10,21 @@ export default function Mainlayout1() {
   );
   return (
     <MainStyledlayout1>
-      <div
-        className="xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-6 
-    flex flex-col py-12 "
-      >
-        <p
-          className="text-[30px] xl:text-[34px] lg:text-[34px] md:text-[40px] 
-      sm:text-[28px] tracking-[0.3px]"
-        >
+      <RightDiv>
+        <RightDivP>
           Helping people make the world a better place through quality software.
-        </p>
-
+        </RightDivP>
         <Link
           className={`xl:px-11 lg:px-11 md:px-2 sm:px-2 lg:py-6 xl:py-6 sm:py-6 md:py-6 xl:w-3/5
          sm:w-2/5 md:w-1/3 lg:w-3/5 mt-8 font-bold text-center tracking-wide
         rounded-full ${
-          !theme ? "bg-content text-[#000]" : "bg-[#000] text-[#fff]"
+          !theme ? "bg-content text-[#1f2028]" : "bg-[#000] text-[#fff]"
         }`}
           to={"/blogs"}
         >
           Read the blog
         </Link>
-      </div>
+      </RightDiv>
 
       <div
         className="xl:col-span-4 lg:col-span-4
@@ -47,6 +41,7 @@ export default function Mainlayout1() {
           alt=""
         />
       </div>
+      
     </MainStyledlayout1>
   );
 }

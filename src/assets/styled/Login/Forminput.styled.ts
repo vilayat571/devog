@@ -9,7 +9,7 @@ export const FormInput = styled.input`
   margin-bottom: 16px;
   font-size: 14px;
   border-radius: 2px;
-  background-color: #272935;
+  background-color: #2e3039;
   height: 56px;
   border: none;
   outline: none;

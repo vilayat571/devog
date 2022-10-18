@@ -7,5 +7,5 @@ export const Formbuton = styled.button`
   border: none;
   outline: none;
   border-radius: 2px;
-  background-color: #272935;
+  background-color: #2e3039;
 `;
