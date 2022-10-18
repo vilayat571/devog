@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { MainStyledlayout1 } from "../../assets/styled/Main/Mainlayout1.styled";
 import { RootState, useAppSelector } from "../../redux/store/store";

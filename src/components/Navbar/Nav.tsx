@@ -42,7 +42,6 @@ export const Nav = () => {
        ${!theme ? "text-content" : "text-black"}
          flex justify-between items-center `}
     >
-
       <div className=" group w-1/12">
         <Link
           className={`text-[1.5rem] tracking-[1px] w-0 group-hover:w-auto 
@@ -58,7 +57,6 @@ export const Nav = () => {
           S.Vilayat
         </Link>
       </div>
-
 
       <div
         className={`sm:hidden md:hidden lg:flex xl:flex flex w-1/2 tracking-[0.8px] 

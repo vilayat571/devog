@@ -21,7 +21,7 @@ export default function Layout({ children }: ILayout) {
     >
       <Nav />
       {children}
-        <hr className="w-full border-[#424453] my-12" />
+      <hr className="w-full border-[#424453] my-12" />
       <Fotter />
     </LayoutStyled>
   );
