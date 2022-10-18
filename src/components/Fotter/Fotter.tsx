@@ -111,7 +111,7 @@ export function Fotter() {
                   !theme ? "text-[#fff]" : "text-[#000]"
                 } text-lg font-bold mr-8`}
               >
-               Contact me
+                Contact me
               </div>
               <Link
                 to={"/blogs"}
