@@ -13,7 +13,7 @@ import Save from "./pages/Save/Save";
 
 export default function App() {
   return (
-    <React.Fragment>
+    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
@@ -28,6 +28,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </React.Fragment>
+    </>
   );
 }

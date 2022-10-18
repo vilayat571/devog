@@ -8,7 +8,7 @@ import { registeredUser } from "../../redux/reducers/registerReducer";
 import { useAppDispatch } from "../../redux/store/store";
 
 interface Register {
-  handleSubmit(e: React.FormEvent<HTMLFormElement>): void;
+  handleSubmit(e:  React.FormEvent<HTMLFormElement>): void;
   handleChange(e: React.ChangeEvent<HTMLInputElement>): void;
   regForm: {
     first_name: string;
@@ -31,14 +31,7 @@ export default function Register() {
   const dispatch = useAppDispatch();
 
   const handleSubmit: Register["handleSubmit"] = (e) => {
-    e.preventDefault();
-    setRegForm({
-      first_name: "",
-      last_name: "",
-      email: "",
-      username: "",
-      password: "",
-    });
+    e.preventDefault()
     dispatch(
       registeredUser({
         first_name: regForm.first_name,
@@ -48,6 +41,13 @@ export default function Register() {
         password: regForm.password,
       })
     );
+    setRegForm({
+      first_name: "",
+      last_name: "",
+      email: "",
+      username: "",
+      password: "",
+    });
   };
 
   const handleChange: Register["handleChange"] = (e) => {

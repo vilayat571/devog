@@ -21,10 +21,11 @@ const initialState: Partial<IRegister> = {
 export const registeredUser = createAsyncThunk(
   "/registeredUser",
   async (data: IRegister["details"]) => {
-    const url = "https://django-blog-rest.herokuapp.com/api/v1/account/register/";
+    const url =
+      "https://django-blog-rest.herokuapp.com/api/v1/account/register/";
     const register = await fetch(url, {
       method: "POST",
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         first_name: data.first_name,
         last_name: data.last_name,
