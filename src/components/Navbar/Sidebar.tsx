@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   RootState,
   useAppDispatch,
@@ -18,8 +16,13 @@ import {
   SideDiv1,
   SideDiv1Div,
 } from "../../assets/styled/Sidebar/SideDiv1.styled";
-import { SideDiv2 } from "../../assets/styled/Sidebar/SideDiv2.styled";
+import {
+  SideDiv2,
+  SideDiv2Layout,
+} from "../../assets/styled/Sidebar/SideDiv2.styled";
 import { Sidelink } from "../../atoms/Sidebar/Sidelink";
+import { Sidelinkadvanced } from "../../atoms/Sidebar/Sidelinkadvanced";
+import { SideDiv1link } from "../../atoms/Sidebar/SideDiv1link";
 
 interface ISidebar {
   open: boolean;
@@ -46,17 +49,7 @@ export function Sidebar(props: ISidebar) {
   return (
     <SidebarLayout>
       <SideDiv1>
-        <Link
-          className={`text-[1.5rem] tracking-[1px] w-0 group-hover:w-auto  border-b-2 py-1  font-bold
-  ${
-    !theme
-      ? "group-hover:border-content border-theme"
-      : "group-hover:border-theme border-content"
-  }`}
-          to={"/"}
-        >
-          S.Vilayat
-        </Link>
+        <SideDiv1link text="ReadyPass" url="" />
         <SideDiv1Div>
           <CloseButon
             borderHover={!theme ? "#fff" : "#000"}
@@ -80,45 +73,24 @@ export function Sidebar(props: ISidebar) {
       </SideDiv1>
 
       <SideDiv2>
-        <div
-          className={`w-full mt-8 grid
-         grid-cols-2 h-1/2 tracking-[0.8px] 
-  justify-between items-start text-base ${
-    !theme ? "text-nav" : "text-blackContent"
-  } `}
-        >
+        <SideDiv2Layout color={!theme ? "#a9adc1" : "#535661"}>
           <Sidelink text="Blog" url="blogs" />
           <Sidelink text="  Wishlist" url="save" />
           <Sidelink text="Workshops" url="blogs" />
           <Sidelink text="About" url="about" />
 
           {token ? (
-            <Link
-              className="py-8 col-span-2
-            px-6  border-b border-t  border-[#424453] hover:text-content"
-              to={"/account/logout"}
-            >
-              {details && details.username}
-            </Link>
+            <Sidelinkadvanced
+              text={details && details.username}
+              url={"account/logout"}
+            />
           ) : (
             <>
-              <Link
-                className="py-8 col-span-2
-            px-6  border-t  border-[#424453] hover:text-content"
-                to={"/login"}
-              >
-                Login
-              </Link>
-              <Link
-                className="py-8 col-span-2
-            px-6  border-b border-t  border-[#424453] hover:text-content"
-                to={"/register"}
-              >
-                Register
-              </Link>
+              <Sidelink text={"Login"} url={"/login"} />
+              <Sidelinkadvanced text="Register" url="register" />
             </>
           )}
-        </div>
+        </SideDiv2Layout>
       </SideDiv2>
     </SidebarLayout>
   );

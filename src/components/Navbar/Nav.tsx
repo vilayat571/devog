@@ -100,15 +100,15 @@ export function Nav() {
               </Link>
             ) : (
               <>
-               <Link className="px-4 py-2 rounded-full text-sm bg-[#2e3039] text-content" to={"/login"}>
+           {/*   <Link className="px-4 py-2 rounded-full text-sm bg-[#2e3039] text-content" to={"/login"}>
                   Get started
-                </Link>
-             {/*    <Link className="px-2 hover:text-content" to={"/login"}>
+                </Link> */}
+               <Link className="px-2 hover:text-content" to={"/login"}>
                   Login
                 </Link>
                 <Link className="px-2 hover:text-content" to={"/register"}>
                   Register
-                </Link> */}
+                </Link> 
               </>
             )}
           </div>
