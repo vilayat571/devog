@@ -2,7 +2,7 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import { Link } from "react-router-dom";
 import { MaindivStyled } from "../../assets/styled/Main/MaindivStyled.styled";
 import Mainlayout1 from "../../components/Main/Mainlayout1";
-import RecomendedBlogs from "../../components/Main/RecomendedBlogs";
+import { RecomendedBlogs } from "../../components/Main/RecomendedBlogs";
 import Layout from "../../layout/Layout";
 import { RootState, useAppSelector } from "../../redux/store/store";
 
@@ -15,8 +15,7 @@ function Main() {
       <MaindivStyled>
         <Mainlayout1 />
 
-
-{/* Black section */}
+        {/* Black section */}
 
         <div
           className={`h-auto w-[87.5%] grid grid-cols-4 ${
@@ -98,7 +97,7 @@ function Main() {
           </div>
         </div>
         <div className="w-full flex justify-center items-center">
-        <RecomendedBlogs />
+          <RecomendedBlogs />
         </div>
       </MaindivStyled>
     </Layout>

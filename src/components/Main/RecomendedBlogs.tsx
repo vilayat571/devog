@@ -8,7 +8,7 @@ import {
   useAppSelector,
 } from "../../redux/store/store";
 
-function RecomendedBlogs() {
+export function RecomendedBlogs() {
   const theme: boolean = useAppSelector(
     (state: RootState) => state.changeThemeReducer.theme
   );
@@ -34,13 +34,17 @@ image: null
 title: "Python variables"
 
 */
+  console.log(blogs.results && blogs.results);
 
   return (
-    <div className="w-[87.8%] mt-12 h-[50vh] flex flex-col justify-between">
-      <div className="flex justify-between items-center">
+    <div className="w-[87.8%] mt-12 h-auto flex flex-col justify-between">
+      <div
+        className="flex justify-between items-center
+      xl:flex-row lg:flex-row md:flex-col sm:flex-col"
+      >
         <div
           className={`${
-            !theme ? "text-[#fff]" : "text-[#000]"
+            !theme ? "text-[#fff]" : "text-[#000] "
           } flex flex-col text-3xl mb-2`}
         >
           <div className={`mb-1 ${!theme ? "text-[#fff]" : "text-[#000]"} `}>
@@ -73,16 +77,30 @@ title: "Python variables"
           </Link>
         </div>
       </div>
-      {blogs.results !== undefined
-        ? blogs.results.slice(0, 3).map((blog: any) => (
-            <div key={blog.id}>
-              {blog.description}
-              <br />
-              {blog.title}
-            </div>
-          ))
-        : "Loading.."}
+
+      <div
+        className="grid gap-6 xl:grid-cols-6 sm:grid-cols-2 md:grid-cols-2 
+      lg:grid-cols-6 w-full h-auto  my-12"
+      >
+        {blogs.results !== undefined
+          ? blogs.results.map((blog: any) => (
+              <div className="col-span-2  flex flex-col" key={blog.id}>
+                <img
+                  className="object-cover  rounded-xl w-[445px] h-[445px]"
+                  src={blog.image}
+                  alt=""
+                />
+                <p className="line-clamp-1 mt-8 text-2xl font-bold">
+                  {blog.description}
+                </p>
+                <div
+                  className="line-clamp-4 mt-4 text-base text-nav font-bold"
+                  dangerouslySetInnerHTML={{ __html: blog.body }}
+                />
+              </div>
+            ))
+          : "Loading.."}
+      </div>
     </div>
   );
 }
-export default RecomendedBlogs;

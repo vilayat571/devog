@@ -5,7 +5,8 @@
 @media (max-width: 300px) {
 }
 
-/* nav: "#a9adc1",
+/*   nav: "#a9adc1",
       content: "#fff",
       theme: "#1f2028",
-      out: "#4b4c53", */
+      out: "#4b4c53",
+      blackContent:'#535661' */

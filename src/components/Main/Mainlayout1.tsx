@@ -41,7 +41,6 @@ export default function Mainlayout1() {
           alt=""
         />
       </div>
-      
     </MainStyledlayout1>
   );
 }
