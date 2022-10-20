@@ -28,8 +28,6 @@ function Main() {
       <MaindivStyled>
         <Mainlayout1 />
         <Mainlayout2 bgColor={!theme ? "#2e3039" : "#f7f7f7"}>
-          {/* Main Layout Div2 */}
-
           <Mainlayout2Div1>
             <SuglingLayout>
               <SuglingDiv>

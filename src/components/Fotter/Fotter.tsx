@@ -26,9 +26,9 @@ export function Fotter() {
            sm:w-full md:w-full 
         lg:w-auto xl:w-auto justify-between items-start"
         >
-          <p className="mb-6 text-2xl font-semibold">S.Vilayat</p>
+          <p className="mb-6 text-2xl font-semibold">ReadyPass</p>
           <p className="mb-6 text-2xl text-[#a9adc1]">
-            Full time educator
+            Full time interviewer
             <br />
             making our world better.
           </p>
@@ -47,8 +47,8 @@ export function Fotter() {
         >
           <p className="mb-4 text-lg font-medium">Contact</p>
           <p className="flex flex-col">
-            <span className="text-nav mt-1">Email: vilayat571@gmail.com</span>
-            <span className="text-nav mt-1">Number: +994-50-890-87-27</span>
+            <span className="text-nav mt-1">readypass@gmail.com</span>
+            <span className="text-nav mt-1">readypass.com</span>
           </p>
         </div>
         <div
@@ -60,7 +60,7 @@ export function Fotter() {
           <p className="mb-4 text-lg font-medium">General</p>
           <p className="flex flex-col">
             <Link to="/#" className="text-nav mt-1">
-              My Mission
+              Our Mission
             </Link>
             <Link to="/#" className="text-nav mt-1">
               Privacy policy
@@ -101,10 +101,11 @@ export function Fotter() {
               type="text"
               placeholder="Email"
               className="bg-[#2e3039] px-11 py-8 rounded-lg
-              outline-none border-none mt-5
-            "
+              outline-none border-none mt-5 "
             />
-            <div className="w-1/3 mt-12 flex justify-center items-center">
+            <div className="xl:w-1/3 lg:w-1/3 md:w-1/2 sm:w-3/4 mt-12 
+            flex lg:mb-0 xl:mb-0 sm:mb-8 md:mb-8
+             sm:justify-start md:justify-start  justify-center items-center">
               <div
                 className={`${
                   !theme ? "text-[#fff]" : "text-[#000]"
@@ -142,19 +143,22 @@ export function Fotter() {
               Blogs
             </Link>
             <Link to="/#" className="text-nav mt-1">
-              Workshops
+              Write
             </Link>
             <Link to="/#" className="text-nav mt-1">
               Wishlists
             </Link>
             <Link to="/#" className="text-nav mt-1">
-              About
+              Interview
             </Link>
             <Link to="/#" className="text-nav mt-1">
-              Login
+              Sign in
             </Link>
             <Link to="/#" className="text-nav mt-1">
-              Register
+              Sign up
+            </Link>
+            <Link to="/#" className="text-nav mt-1">
+              FAQ
             </Link>
             <Link to="/#" className="text-nav mt-1">
               Privacy policy

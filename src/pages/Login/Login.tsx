@@ -100,7 +100,7 @@ export default function Login() {
               Sign up
             </Link>
           </p>
-          <Formbuton>Login</Formbuton>
+          <Formbuton>Sign in</Formbuton>
         </Formlogin>
       </LoginLayout>
     </Layout>

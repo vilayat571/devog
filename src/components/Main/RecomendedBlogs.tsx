@@ -32,17 +32,21 @@ export function RecomendedBlogs() {
         <div
           className={`${
             !theme ? "text-[#fff]" : "text-[#000] "
-          } flex flex-col text-3xl mb-2`}
+          } flex flex-col text-3xl mb-2 md:w-full sm:w-full
+          lg:w-auto xl:w-auto`}
         >
-          <div className={`mb-1 ${!theme ? "text-[#fff]" : "text-[#000]"} `}>
+          <div className={`my-1 ${!theme ? "text-[#fff]" : "text-[#000]"} `}>
             Blog recommendations
           </div>
-          <div className={`mt-1 ${!theme ? "text-[#fff]" : "text-[#000]"} `}>
+          <div className={` ${!theme ? "text-[#fff]" : "text-[#000]"} `}>
             Prepared especially for you.
           </div>
         </div>
 
-        <div className="flex items-center justify-center">
+        <div className="md:w-full sm:w-full xl:mt-0 md:mt-4 sm:mt-4
+        lg:mt-0 lg:w-auto xl:w-auto sm:text-left md:text-left
+           flex items-center sm:justify-start
+           md:justify-start lg:justify-center xl:justify-center">
           <div
             className={`${
               !theme ? "text-[#fff]" : "text-[#000]"
