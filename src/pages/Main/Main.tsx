@@ -16,7 +16,7 @@ import {
 import { Diver } from "../../atoms/Main/Diver";
 import Mainlayout1 from "../../components/Main/Mainlayout1";
 import { RecomendedBlogs } from "../../components/Main/RecomendedBlogs";
-import Layout from "../../layout/Layout";
+import {Layout} from "../../layout/Layout";
 import { RootState, useAppSelector } from "../../redux/store/store";
 
 function Main() {

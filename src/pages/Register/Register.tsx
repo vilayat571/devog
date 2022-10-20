@@ -4,9 +4,9 @@ import { Formbuton } from "../../assets/styled/Login/Formbuton.styled";
 import { FormInput } from "../../assets/styled/Login/Forminput.styled";
 import { Formlayout } from "../../assets/styled/Register/Formlayout.styled";
 import { FormRegister } from "../../assets/styled/Register/Formregister.styled";
-import Layout from "../../layout/Layout";
+import {Layout} from "../../layout/Layout";
 import { registeredUser } from "../../redux/reducers/registerReducer";
-import { useAppDispatch } from "../../redux/store/store";
+import { RootState, useAppDispatch, useAppSelector } from "../../redux/store/store";
 
 interface Register {
   handleSubmit(e: React.FormEvent<HTMLFormElement>): void;
@@ -21,6 +21,11 @@ interface Register {
 }
 
 export default function Register() {
+
+  const theme: boolean = useAppSelector(
+    (state: RootState) => state.changeThemeReducer.theme
+  );
+
   const navigate = useNavigate();
   const [regForm, setRegForm] = useState<Register["regForm"]>({
     first_name: "",
@@ -72,6 +77,8 @@ export default function Register() {
       <Formlayout>
         <FormRegister onSubmit={(e) => handleSubmit(e)}>
           <FormInput
+                      bgColor={!theme ? "#2e3039" : "#fff"}
+
             required={true}
             placeholder="First name"
             id="first_name"
@@ -81,6 +88,8 @@ export default function Register() {
           />
 
           <FormInput
+                      bgColor={!theme ? "#2e3039" : "#fff"}
+
             required={true}
             placeholder="Last name"
             id="last_name"
@@ -90,6 +99,8 @@ export default function Register() {
           />
 
           <FormInput
+                      bgColor={!theme ? "#2e3039" : "#fff"}
+
             required={true}
             placeholder="Email"
             id="email"
@@ -99,6 +110,8 @@ export default function Register() {
           />
 
           <FormInput
+                      bgColor={!theme ? "#2e3039" : "#fff"}
+
             required={true}
             placeholder="Username"
             id="username"
@@ -108,6 +121,8 @@ export default function Register() {
           />
 
           <FormInput
+                      bgColor={!theme ? "#2e3039" : "#fff"}
+
             required={true}
             placeholder="Password"
             id="password"

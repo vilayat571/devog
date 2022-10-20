@@ -7,14 +7,14 @@ interface ILayout {
   children: ReactNode;
 }
 
-export default function Layout({ children }: ILayout) {
+export function Layout({ children }: ILayout) {
   const theme: boolean = useAppSelector(
     (state: RootState) => state.changeThemeReducer?.theme
   );
 
   return (
     <LayoutStyled
-      theme={theme ? "#ffffff" : "#1f2028"}
+      theme={theme ? "#fff" : "#1f2028"}
       color={theme ? "#000" : "#fff"}
     >
       <Nav />

@@ -48,7 +48,7 @@ export function Sidebar(props: ISidebar) {
   );
 
   return (
-    <SidebarLayout>
+    <SidebarLayout bgColor={!theme ? '#1f2028' : '#fff'}>
       <SideDiv1>
         <SideDiv1link text="ReadyPass" url="/" />
         <SideDiv1Div>

@@ -1,8 +1,12 @@
 import styled from "styled-components";
-
+interface ILay{
+  bgColor:string;
+}
 export const SidebarLayout = styled.div`
   width: 100%;
   height: 100vh;
+  background-color: ${(props:ILay)=>props.bgColor};
+  z-index: 999;
   display: flex;
   flex-direction: column;
   transition-property: all;
