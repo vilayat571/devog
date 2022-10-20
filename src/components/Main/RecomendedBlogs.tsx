@@ -23,19 +23,6 @@ export function RecomendedBlogs() {
     dispatch(fetchBlogs());
   }, []);
 
-  /*
-author: 1
-body: "asdsadsad"
-category: 1
-created_date: "2022-09-18"
-description: "asdsad"
-id: 1
-image: null
-title: "Python variables"
-
-*/
-  console.log(blogs.results && blogs.results);
-
   return (
     <div className="w-[87.8%] mt-12 h-auto flex flex-col justify-between">
       <div

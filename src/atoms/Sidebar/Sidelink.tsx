@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { RootState, useAppSelector } from "../../redux/store/store";
 export interface ILink {
-  text: string|undefined;
+  text: string | undefined;
   url: string;
 }
 export function Sidelink(props: ILink) {
