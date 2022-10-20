@@ -23,6 +23,7 @@ import {
 import { Sidelink } from "../../atoms/Sidebar/Sidelink";
 import { Sidelinkadvanced } from "../../atoms/Sidebar/Sidelinkadvanced";
 import { SideDiv1link } from "../../atoms/Sidebar/SideDiv1link";
+import { Sidestarted } from "../../atoms/Sidebar/Sidestarted";
 
 interface ISidebar {
   open: boolean;
@@ -49,7 +50,7 @@ export function Sidebar(props: ISidebar) {
   return (
     <SidebarLayout>
       <SideDiv1>
-        <SideDiv1link text="ReadyPass" url="" />
+        <SideDiv1link text="ReadyPass" url="/" />
         <SideDiv1Div>
           <CloseButon
             borderHover={!theme ? "#fff" : "#000"}
@@ -74,10 +75,11 @@ export function Sidebar(props: ISidebar) {
 
       <SideDiv2>
         <SideDiv2Layout color={!theme ? "#a9adc1" : "#535661"}>
-          <Sidelink text="Blog" url="blogs" />
-          <Sidelink text="  Wishlist" url="save" />
-          <Sidelink text="Workshops" url="blogs" />
-          <Sidelink text="About" url="about" />
+          <Sidelink text="Blogs" url="#" />
+          <Sidelink text="Write" url="#" />
+          <Sidelink text="Wishlist" url="#" />
+          <Sidelink text="Interview" url="#" />
+          <Sidelink text="Write questions" url="#" />
 
           {token ? (
             <Sidelinkadvanced
@@ -86,8 +88,7 @@ export function Sidebar(props: ISidebar) {
             />
           ) : (
             <>
-              <Sidelink text={"Login"} url={"/login"} />
-              <Sidelinkadvanced text="Register" url="register" />
+              <Sidestarted text={"Get started"} url={"/login"} />
             </>
           )}
         </SideDiv2Layout>

@@ -6,6 +6,9 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { NavItems } from "../../assets/styled/Navbar/Navbar.styled";
+import { Navlink } from "../../atoms/Navbar/Navlink";
+import { StartedLink } from "../../atoms/Navbar/StartedLink";
 import { changeTheme } from "../../redux/reducers/changeThemeReducer";
 import {
   RootState,
@@ -76,42 +79,20 @@ export function Nav() {
             </Link>
           </div>
 
-          <div
-            className={`sm:hidden md:hidden lg:flex xl:flex flex w-1/2 tracking-[0.8px] 
-        justify-between items-center ${
-          !theme ? "text-nav" : "text-blackContent"
-        } font-bold`}
-          >
-            <Link className="px-2 hover:text-content" to={"/blogs"}>
-              Blogs
-            </Link>
-            <Link className="px-2 hover:text-content" to={"/save"}>
-              Write
-            </Link>
-            <Link className="px-2 hover:text-content" to={"/save"}>
-              Intervies
-            </Link>
-            <Link className="px-2 hover:text-content" to={"/save"}>
-              Wishlists
-            </Link>
+{/* Nav items well done */}
+          <NavItems color={theme ? "#535661" : "#c0c0c0"}>
+            <Navlink text="Blogs" url="#" />
+            <Navlink text="Write" url="#" />
+            <Navlink text="Wishlist" url="#" />
+            <Navlink text="Interview" url="#" />
+            <Navlink text="Write questions" url="#" />
             {token ? (
-              <Link className="px-2 hover:text-content" to={"/account/logout"}>
-                {details && details.username}
-              </Link>
+              <Navlink text={details && details.username} url="#" />
             ) : (
-              <>
-           {/*   <Link className="px-4 py-2 rounded-full text-sm bg-[#2e3039] text-content" to={"/login"}>
-                  Get started
-                </Link> */}
-               <Link className="px-2 hover:text-content" to={"/login"}>
-                  Login
-                </Link>
-                <Link className="px-2 hover:text-content" to={"/register"}>
-                  Register
-                </Link> 
-              </>
+              <StartedLink text="Get started" url="/login" />
             )}
-          </div>
+          </NavItems>
+
           <div className="flex justify-between items-center">
             <button
               onClick={() => handleOpen()}

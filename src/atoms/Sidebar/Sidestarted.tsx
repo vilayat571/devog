@@ -1,24 +1,26 @@
 import { Link } from "react-router-dom";
 import { RootState, useAppSelector } from "../../redux/store/store";
 export interface ILink {
-  text: string|undefined;
+  text: string;
   url: string;
 }
-export function Sidelink(props: ILink) {
+export function Sidestarted(props: ILink) {
   const theme: boolean = useAppSelector(
     (state: RootState) => state.changeThemeReducer.theme
   );
   return (
     <Link
       className={`py-8 col-span-2
-      px-8 border-t ${
-        !theme
-          ? "hover:text-content border-[#424453] "
-          : "hover:text-[#000]  border-[#cfcfcf] "
-      } `}
+      px-6 border-t border-b
+     ${!theme ? "border-[#424453]" : " border-[#cfcfcf]"} hover:text-content`}
       to={`${props.url}`}
     >
-      {props.text}
+      <span
+        className="bg-[#2e3039] 
+     rounded-full text-sm px-6 py-3 text-[#fff]"
+      >
+        {props.text}
+      </span>
     </Link>
   );
 }

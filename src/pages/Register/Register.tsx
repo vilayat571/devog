@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formbuton } from "../../assets/styled/Login/Formbuton.styled";
 import { FormInput } from "../../assets/styled/Login/Forminput.styled";
 import { Formlayout } from "../../assets/styled/Register/Formlayout.styled";
@@ -20,6 +21,7 @@ interface Register {
 }
 
 export default function Register() {
+  const navigate = useNavigate();
   const [regForm, setRegForm] = useState<Register["regForm"]>({
     first_name: "",
     last_name: "",
@@ -32,22 +34,33 @@ export default function Register() {
 
   const handleSubmit: Register["handleSubmit"] = (e) => {
     e.preventDefault();
-    dispatch(
-      registeredUser({
-        first_name: regForm.first_name,
-        last_name: regForm.last_name,
-        email: regForm.email,
-        username: regForm.username,
-        password: regForm.password,
-      })
-    );
-    setRegForm({
-      first_name: "",
-      last_name: "",
-      email: "",
-      username: "",
-      password: "",
-    });
+    if (
+      regForm.email &&
+      regForm.first_name &&
+      regForm.last_name &&
+      regForm.username &&
+      regForm.password
+    ) {
+      dispatch(
+        registeredUser({
+          first_name: regForm.first_name,
+          last_name: regForm.last_name,
+          email: regForm.email,
+          username: regForm.username,
+          password: regForm.password,
+        })
+      );
+      setRegForm({
+        first_name: "",
+        last_name: "",
+        email: "",
+        username: "",
+        password: "",
+      });
+      navigate("/login");
+    } else {
+      alert("Field ca not be blank..");
+    }
   };
 
   const handleChange: Register["handleChange"] = (e) => {
@@ -59,7 +72,7 @@ export default function Register() {
       <Formlayout>
         <FormRegister onSubmit={(e) => handleSubmit(e)}>
           <FormInput
-            required={false}
+            required={true}
             placeholder="First name"
             id="first_name"
             onChange={(e) => handleChange(e)}
@@ -68,7 +81,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={false}
+            required={true}
             placeholder="Last name"
             id="last_name"
             onChange={(e) => handleChange(e)}
@@ -77,7 +90,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={false}
+            required={true}
             placeholder="Email"
             id="email"
             onChange={(e) => handleChange(e)}
@@ -86,7 +99,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={false}
+            required={true}
             placeholder="Username"
             id="username"
             onChange={(e) => handleChange(e)}
@@ -95,7 +108,7 @@ export default function Register() {
           />
 
           <FormInput
-            required={false}
+            required={true}
             placeholder="Password"
             id="password"
             onChange={(e) => handleChange(e)}

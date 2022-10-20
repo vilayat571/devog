@@ -4,7 +4,6 @@ export const SidebarLayout = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
