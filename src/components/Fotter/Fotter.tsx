@@ -13,7 +13,7 @@ export function Fotter() {
       className="w-full h-auto flex flex-col
       justify-between items-center 
     lg:px-40 md:px-12 sm:px-12 xl:px-40 
-    lg:py-20 md:py-0 sm:py-0 xl:py-20 mb-40"
+    lg:py-20 md:py-0 sm:py-0 xl:pt-24 mb-16"
     >
       <div
         className="w-full
@@ -22,15 +22,15 @@ export function Fotter() {
       >
         <div
           className="flex flex-col lg:mb-0
-           xl:mb-0 sm:mb-8 md:mb-8
+           xl:mb-0 sm:mb-12 md:mb-12
            sm:w-full md:w-full 
         lg:w-auto xl:w-auto justify-between items-start"
         >
-          <p className="mb-6 text-2xl font-semibold">ReadyPass</p>
-          <p className="mb-6 text-2xl text-[#a9adc1]">
-            Full time interviewer
+          <p className="mb-6 text-xl font-semibold">ReadyPass</p>
+          <p className="mb-6 text-xl text-[#a9adc1]">
+            The blogs that teach you
             <br />
-            making our world better.
+            something for making our world better.
           </p>
           <p>
             <GitHubIcon className="mr-3" sx={{ fontSize: 32 }} />
@@ -41,14 +41,13 @@ export function Fotter() {
 
         <div
           className="flex flex-col lg:mb-0
-           xl:mb-0 sm:mb-8 md:mb-8
+           xl:mb-0 sm:mb-12 md:mb-12
            sm:w-full md:w-full 
         lg:w-auto xl:w-auto justify-between items-start"
         >
           <p className="mb-4 text-lg font-medium">Contact</p>
           <p className="flex flex-col">
-            <span className="text-nav mt-1">readypass@gmail.com</span>
-            <span className="text-nav mt-1">readypass.com</span>
+            <span className="text-white font-bold text-3xl mt-1">#103</span>
           </p>
         </div>
         <div
@@ -74,7 +73,9 @@ export function Fotter() {
       <div
         className="w-full
       flex  lg:flex-row md:flex-col 
-      sm:flex-col xl:flex-row justify-between items-start h-auto py-12 mt-8"
+      sm:flex-col xl:flex-row justify-between items-start h-auto 
+      xl:pt-12 lg:pt-12 md:py-4 sm:py-4 
+      lg:mt-8 md:mt-0 sm:mt-0 xl:mt-8"
       >
         <div
           className="flex flex-col 
@@ -82,11 +83,13 @@ export function Fotter() {
         lg:w-2/3 xl:w-2/3 justify-between items-start"
         >
           <p className="flex flex-col">
-            <p className="mb-4 text-lg font-medium"> Stay up to date!</p>
+            <p className="mb-4 text-lg font-medium">Stay up to date!</p>
             <p className="text-base text-nav">
-              Subscribe to the newsletter to stay up to date with
+              Follow us to stay up to date
               <br />
-              articles,courses and much more! Learn more..
+              with articles,blogs and much more!
+              <br />
+              Addition write your blogs. Learn everytime with us..
             </p>
           </p>
           <form className="flex flex-col w-full">
@@ -103,9 +106,11 @@ export function Fotter() {
               className="bg-[#2e3039] px-11 py-8 rounded-lg
               outline-none border-none mt-5 "
             />
-            <div className="xl:w-1/3 lg:w-1/3 md:w-1/2 sm:w-3/4 mt-12 
+            <div
+              className="xl:w-1/3 lg:w-1/3 md:w-1/2 sm:w-3/4 mt-12 
             flex lg:mb-0 xl:mb-0 sm:mb-8 md:mb-8
-             sm:justify-start md:justify-start  justify-center items-center">
+             sm:justify-start md:justify-start  justify-center items-center"
+            >
               <div
                 className={`${
                   !theme ? "text-[#fff]" : "text-[#000]"
@@ -149,16 +154,10 @@ export function Fotter() {
               Wishlists
             </Link>
             <Link to="/#" className="text-nav mt-1">
-              Interview
-            </Link>
-            <Link to="/#" className="text-nav mt-1">
               Sign in
             </Link>
             <Link to="/#" className="text-nav mt-1">
               Sign up
-            </Link>
-            <Link to="/#" className="text-nav mt-1">
-              FAQ
             </Link>
             <Link to="/#" className="text-nav mt-1">
               Privacy policy

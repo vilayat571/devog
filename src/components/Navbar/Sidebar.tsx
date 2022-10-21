@@ -48,7 +48,7 @@ export function Sidebar(props: ISidebar) {
   );
 
   return (
-    <SidebarLayout bgColor={!theme ? '#1f2028' : '#fff'}>
+    <SidebarLayout bgColor={!theme ? "#1f2028" : "#fff"}>
       <SideDiv1>
         <SideDiv1link text="ReadyPass" url="/" />
         <SideDiv1Div>
@@ -78,9 +78,6 @@ export function Sidebar(props: ISidebar) {
           <Sidelink text="Blogs" url="#" />
           <Sidelink text="Write" url="#" />
           <Sidelink text="Wishlist" url="#" />
-          <Sidelink text="Interview" url="#" />
-          <Sidelink text="Write questions" url="#" />
-
           {token ? (
             <Sidelinkadvanced
               text={details && details.username}
@@ -88,7 +85,8 @@ export function Sidebar(props: ISidebar) {
             />
           ) : (
             <>
-              <Sidestarted text={"Get started"} url={"/login"} />
+                <Sidelink text="Sign in" url="/login" />
+                <Sidelink text="Sign up" url="/register" />
             </>
           )}
         </SideDiv2Layout>

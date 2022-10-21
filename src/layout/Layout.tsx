@@ -21,6 +21,10 @@ export function Layout({ children }: ILayout) {
       {children}
       <hr className="w-full border-[#424453] my-12" />
       <Fotter />
+      <div className="w-full xl:px-40 sm:px-12 md:px-12 
+      lg:px-40 mb-16  text-nav text-base text-left ">
+        All rights reserved © Vilayat Safarov 2022
+      </div>
     </LayoutStyled>
   );
 }
