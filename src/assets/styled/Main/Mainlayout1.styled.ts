@@ -4,7 +4,7 @@ export const MainStyledlayout1 = styled.div`
   width: 88%;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  margin-top: 80px;
+  margin-top: 70px;
   @media (max-width: 1024px) {
     margin-top: 80px;
   }

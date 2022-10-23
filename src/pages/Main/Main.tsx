@@ -16,17 +16,27 @@ import {
 import { Diver } from "../../atoms/Main/Diver";
 import Mainlayout1 from "../../components/Main/Mainlayout1";
 import { RecomendedBlogs } from "../../components/Main/RecomendedBlogs";
-import {Layout} from "../../layout/Layout";
+import { Layout } from "../../layout/Layout";
 import { RootState, useAppSelector } from "../../redux/store/store";
 
 function Main() {
   const theme: boolean = useAppSelector(
     (state: RootState) => state.changeThemeReducer.theme
   );
+
+  const bodyText: Array<string> = [
+    "Helping people to make",
+    "the world a better place",
+    "     through quality software",
+  ];
   return (
     <Layout>
       <MaindivStyled>
-        <Mainlayout1 />
+        <Mainlayout1
+          img="https://cdn3d.iconscout.com/3d/premium/thumb/space-4551802-3774571.png"
+          butonText="Read blog"
+          bodyText={bodyText}
+        />
         <Mainlayout2 bgColor={!theme ? "#2e3039" : "#f7f7f7"}>
           <Mainlayout2Div1>
             <SuglingLayout>

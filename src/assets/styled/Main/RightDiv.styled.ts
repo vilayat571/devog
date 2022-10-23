@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const RightDiv = styled.div`
   display: flex;
   flex-direction: column;
-  grid-column: span 2 / span 2;
+  grid-column: span 3 / span 3;
   padding: 48px 0px;
   @media (max-width: 1024px) {
     grid-column: span 6 / span 6;

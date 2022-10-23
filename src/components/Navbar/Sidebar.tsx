@@ -50,7 +50,7 @@ export function Sidebar(props: ISidebar) {
   return (
     <SidebarLayout bgColor={!theme ? "#1f2028" : "#fff"}>
       <SideDiv1>
-        <SideDiv1link text="ReadyPass" url="/" />
+        <SideDiv1link text="S.Vilayat" url="/" />
         <SideDiv1Div>
           <CloseButon
             borderHover={!theme ? "#fff" : "#000"}
@@ -76,8 +76,8 @@ export function Sidebar(props: ISidebar) {
       <SideDiv2>
         <SideDiv2Layout color={!theme ? "#a9adc1" : "#535661"}>
           <Sidelink text="Blogs" url="#" />
-          <Sidelink text="Write" url="#" />
-          <Sidelink text="Wishlist" url="#" />
+          <Sidelink text="Workshops" url="#" />
+          <Sidelink text="Brief" url="#" />
           {token ? (
             <Sidelinkadvanced
               text={details && details.username}

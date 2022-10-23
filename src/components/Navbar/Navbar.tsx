@@ -9,7 +9,11 @@ import {
 import { Logo } from "../../atoms/Main/Logo";
 import { Navlink } from "../../atoms/Navbar/Navlink";
 import { changeTheme } from "../../redux/reducers/changeThemeReducer";
-import { RootState, useAppDispatch, useAppSelector } from "../../redux/store/store";
+import {
+  RootState,
+  useAppDispatch,
+  useAppSelector,
+} from "../../redux/store/store";
 import { NavLogoLayout } from "./NavLogoLayout";
 
 export interface INav {
@@ -25,16 +29,16 @@ export interface INav {
   };
 }
 
-interface INavbar{
-  changeOpen2:()=>void;
+interface INavbar {
+  changeOpen2: () => void;
 }
 
-export function Navbar(props:INavbar) {
+export function Navbar(props: INavbar) {
   const theme: boolean = useAppSelector(
     (state: RootState) => state.changeThemeReducer.theme
   );
   const token: INav["token"] = localStorage.getItem("token");
-  
+
   const dispatch = useAppDispatch();
   const handleChange: INav["handleChange"] = () => {
     dispatch(changeTheme(theme));
@@ -47,19 +51,19 @@ export function Navbar(props:INavbar) {
   return (
     <Navlayout color={!theme ? "#fff" : "#000"}>
       <NavLogoLayout>
-        <Logo text="ReadyPass" url="/" />
+        <Logo text="S.Vilayat" url="/" />
       </NavLogoLayout>
       <NavItems color={theme ? "#535661" : "#c0c0c0"}>
-        <Navlink text="Blogs" url="#" />
-        <Navlink text="Write" url="#" />
-        <Navlink text="Wishlist" url="#" />
+        <Navlink text="Blogs" url="/blogs" />
+        <Navlink text="Workshops" url="#" />
+        <Navlink text="Brief" url="#" />
         {token ? (
           <Navlink text={details && details.username} url="#" />
         ) : (
-         <>
-          <Navlink text="Sign in" url="/login" />
-          <Navlink text="Sign up" url="/register" />
-         </>
+          <>
+            <Navlink text="Sign in" url="/login" />
+            <Navlink text="Sign up" url="/register" />
+          </>
         )}
       </NavItems>
       <SwitchDiv>

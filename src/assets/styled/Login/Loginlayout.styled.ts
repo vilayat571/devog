@@ -5,6 +5,7 @@ export const LoginLayout = styled.div`
   height: 70vh;
   padding: 0px;
   display: flex;
+  margin-bottom: 30px;
   justify-content: center;
   align-items: center;
   @media (max-width: 1024px) {
@@ -12,11 +13,11 @@ export const LoginLayout = styled.div`
     height: auto;
   }
   @media (max-width: 768px) {
-    padding: 48px 0px;
+    padding: 0px 0px;
     height: auto;
   }
   @media (max-width: 300px) {
-    padding: 48px 0px;
+    padding: 0px 0px;
     height: auto;
   } ;
 `;
