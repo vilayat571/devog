@@ -11,11 +11,32 @@ export const Mainlayout2 = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   padding: 96px 64px;
   background-color: ${(props: IMain) => props.bgColor};
-  border: none;
   outline: none;
   border-radius: 8px;
   @media (max-width: 1024px) {
     padding: 96px 64px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+  }
+
+  @media (max-width: 300px) {
+    padding: 32px 24px;
+  }
+`;
+
+export const Mainlayout2Image = styled.div`
+  width: 87.8%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 0px px;
+  background-color: ${(props: IMain) => props.bgColor};
+  outline: none;
+  border-radius: 8px;
+  @media (max-width: 1024px) {
+    padding: 10px 64px;
   }
 
   @media (max-width: 768px) {
@@ -95,6 +116,28 @@ export const SuglingDiv = styled.div`
   }
   @media (max-width: 300px) {
     font-size: 1.75rem;
+  }
+`;
+
+export const SuglingDivImage = styled.div`
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height:89%;
+  letter-spacing: 0.3px;
+  @media (max-width: 1024px) {
+    font-size: 1.85rem;
+    height:100%;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    height:100%;
+  }
+  @media (max-width: 300px) {
+    font-size: 1.5rem;
+    height:100%;
   }
 `;
 

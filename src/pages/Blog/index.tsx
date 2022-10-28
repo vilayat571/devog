@@ -1,12 +1,21 @@
 import { SearchOutlined } from "@mui/icons-material";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { RightDiv } from "../../assets/styled/Main/RightDiv.styled";
-import { RightDivP } from "../../assets/styled/Main/RightDivP.styled";
-import Mainlayout1 from "../../components/Main/Mainlayout1";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Mainlayout2,
+  Mainlayout2Div1,
+  Mainlayout2Image,
+  SuglingDiv,
+  SuglingDiv1,
+  SuglingDivImage,
+  SuglingLayout,
+  SuglingLayout1,
+} from "../../assets/styled/Main/Mainlayout2.styled";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import { allBlogs } from "../../data/blogs";
 import { recomendedBlogs } from "../../data/recomendedBlogs";
 import { Layout } from "../../layout/Layout";
+import { RootState, useAppSelector } from "../../redux/store/store";
 import { IBlog } from "./[id]";
 
 interface ChangeFunc {
@@ -21,8 +30,14 @@ interface ChangeFunc {
     body: string;
   }[];
 }
-export function Blog() {
+function Blog() {
+  const theme: boolean = useAppSelector(
+    (state: RootState) => state.changeThemeReducer.theme
+  );
+
   const blogs = recomendedBlogs.concat(allBlogs);
+
+  const navigate = useNavigate();
 
   const [data, setData] = useState<ChangeFunc["blogs"]>(blogs);
   const [query, setQuery] = useState<string>("");
@@ -33,17 +48,14 @@ export function Blog() {
 
   const handleSubmit: ChangeFunc["submit"] = (e) => {
     e.preventDefault();
-    let filteredData = data.filter((dat) => {
-      return dat.title.toLowerCase().indexOf(query.toLocaleLowerCase()) !== -1;
-    });
-    setData(filteredData);
-
-    if(query===''){
-      setData(blogs)
-    }
-    
+    navigate("/blogs/#blog");
   };
 
+  const fileteredData = blogs.filter((item) => {
+    return (
+      item.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1
+    );
+  });
   return (
     <Layout>
       <div className="w-full flex justify-center items-start mt-32">
@@ -71,7 +83,7 @@ export function Blog() {
                 placeholder="Search post"
                 className="w-4/5 border-[1px] bg-theme appearance-none
                 font-bold rounded-full py-6 pl-14 pr-8 text-base
-                border-[#424453] outline-none text-[#fff]
+                border-[#424454] outline-none text-[#fff]
             "
                 onChange={(e) => handleChange(e)}
               />
@@ -98,25 +110,80 @@ export function Blog() {
           </div>
         </div>
       </div>
+      <div className="flex justify-center items-center px-4 w-full mt-12">
+        <Mainlayout2Image bgColor={!theme ? "#2e3039" : "#f7f7f7"}>
+          <Mainlayout2Div1>
+            <SuglingLayout>
+              <SuglingDivImage>
+                <div className="text-2xl  text-nav">
+                  The most likely blog
+                </div>
+                <div className="">
+                  {fileteredData[4].title}
+                  <br />
+                  <span className="text-nav" >
+                  {fileteredData[4].description}
+                  </span>
+                </div>
+                <div className=" items-center mt-20  flex justify-center">
+                  <div
+                    className={`${
+                      !theme ? "text-[#fff]" : "text-[#000]"
+                    } font-bold text-xl `}
+                  >
+                    Read full blog
+                  </div>
+                  <Link
+                    to={"/blogs/5"}
+                    className={`flex justify-center items-center ml-6 cursor-pointer
+       text-3xl border-2 ${
+         !theme
+           ? " border-out hover:border-content"
+           : " border-[#9b9b9b] hover:border-[#000]"
+       } p-1 w-14 h-14 rounded-full
+       transition-all transform duration-100 ease-in`}
+                  >
+                    <ArrowForwardIosOutlinedIcon className=" " />
+                  </Link>
+                </div>
+              </SuglingDivImage>
+            </SuglingLayout>
+
+            <SuglingLayout1>
+              <SuglingDiv1>
+                <img
+                  className="object-cover relative top-5 w-[345px] h-[440px] rounded-xl "
+                  src={fileteredData[4].thumbnail}
+                  alt=""
+                />
+              </SuglingDiv1>
+            </SuglingLayout1>
+          </Mainlayout2Div1>
+        </Mainlayout2Image>
+      </div>
       <div
         className="grid gap-x-6 gap-y-10 xl:grid-cols-6 sm:grid-cols-2 md:grid-cols-2 
       lg:grid-cols-6 w-full h-auto xk:px-32 md:px-12 sm:px-12 lg:px-24 my-12"
       >
-        {data.map((blog: IBlog) => (
+        {fileteredData.map((blog: IBlog) => (
           <div className="col-span-2 " key={blog.id}>
-            <Link to={`/blogs/${blog.id}`} className="flex flex-col ">
+            <Link
+              id={"#blog"}
+              to={`/blogs/${blog.id}`}
+              className="flex flex-col "
+            >
               <img
                 className="object-cover  rounded-xl w-[445px] h-[455px]"
                 src={blog.thumbnail}
                 alt=""
               />
-              <p className="line-clamp-1 mt-12 text-2xl text-nav font-bold">
+              <p className="line-clamp-1 mt-12 text-2xl text-content font-bold">
                 {blog.description}
               </p>
-        {/*       <div
-                className="line-clamp-1 text-2xl mt-3 text-content font-bold"
+                <div
+                className="line-clamp-2 text-xl mt-3 text-nav"
                 dangerouslySetInnerHTML={{ __html: blog.body }}
-              /> */}
+              /> 
             </Link>
           </div>
         ))}
@@ -124,3 +191,4 @@ export function Blog() {
     </Layout>
   );
 }
+export default Blog;

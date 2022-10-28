@@ -16,8 +16,8 @@ export const RecomendedLayout = styled.div`
   align-items: center;
 `;
 
-export const BlogDiv=styled.div`
- font-size: 2.25rem;
+export const BlogDiv = styled.div`
+  font-size: 2.25rem;
   letter-spacing: 0.3px;
   @media (max-width: 1024px) {
     font-size: 1.85rem;
@@ -30,3 +30,9 @@ export const BlogDiv=styled.div`
   }
 `;
 
+export const BlogDivMain=styled.div`
+
+`;
+
+/* xl:mt-0 sm:mt-4 md:mt-4 lg:mt-0 flex xl:w-1/5 md:w-full
+          sm:w-full lg:w-1/5 */
